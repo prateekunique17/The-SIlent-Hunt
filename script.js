@@ -3,7 +3,7 @@
 const answers = {
     1: ['indiancoffeehouse', 'indian coffee house', 'coffeehouse', 'coffee house','inc','INC'],
     2: ['openhand', 'open hand', 'openhandmonument', 'open hand monument','capitol comlex','Capitol Complex','Capitol complex','Open Hand Monument', 'Open Hand'],
-    3: ['elante', 'elantemall', 'elante mall','Elante Mall', 'Elante mall',"elante],
+    3: ['elante', 'elantemall', 'elante mall','Elante Mall', 'Elante mall','elante'],
     4: ['birdpark', 'bird park', 'BirdPark','Bird Park','Bird park'],
     5: ['pec', 'punjab engineering college', 'punjabengineeringcollege', 'punjab engg college','PEC','Punjab Enginnering College','Punjab engineering college']
 };
