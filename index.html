@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Silent Hunt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg"></div>
+    
+    <!-- Landing Page -->
+    <div class="container page active" id="landing">
+        <div class="content-wrapper">
+            <div class="ornamental-line"></div>
+            <h1 class="main-title">The Silent Hunt</h1>
+            <div class="ornamental-line"></div>
+            <p class="subtitle">A mystery woven through Chandigarh</p>
+            <div class="landing-content">
+                <p class="tagline">Five riddles. Five places. One prize.</p>
+                <p class="tagline">The city holds what you seek.</p>
+            </div>
+            <div id="landingButtons">
+                <button class="btn-primary" onclick="showPage('rules')">
+                    <span>Begin Your Journey</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules Page -->
+    <div class="container page" id="rules">
+        <div class="content-wrapper">
+            <div class="ornamental-line"></div>
+            <h2 class="page-title">The Sacred Rules</h2>
+            <div class="ornamental-line"></div>
+            
+            <div class="rules-container">
+                <div class="rule-item">
+                    <span class="rule-number">I</span>
+                    <p>Each riddle points to a real location in Chandigarh</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">II</span>
+                    <p>Visit the place. Observe with silence. Find the word hidden in plain sight</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">III</span>
+                    <p>Return here and enter the word to unlock the next level</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">IV</span>
+                    <p>Complete all five levels to claim your prize</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">V</span>
+                    <p>The hunt rewards patience, observation, and elegance</p>
+                </div>
+            </div>
+            
+            <button class="btn-primary" onclick="showPage('level1')">
+                <span>I Accept</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Level 1: Indian Coffee House -->
+    <div class="container page" id="level1">
+        <div class="content-wrapper">
+            <div class="level-header">
+                <span class="level-number">Chapter One</span>
+                <div class="progress">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+            
+            <div class="riddle-container">
+                <div class="riddle-ornament">❋</div>
+                <p class="riddle-text">
+                    Where writers once gathered, minds ablaze,<br>
+                    In sector seventeen's nostalgic haze.<br>
+                    A spiral staircase, time stands still,<br>
+                    Look to the sign—what's on the bill?
+                </p>
+                <div class="riddle-ornament">❋</div>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="answer1" class="answer-input" placeholder="Speak the word">
+                <div class="input-line"></div>
+            </div>
+            <div class="error" id="error1"></div>
+            
+            <button class="btn-primary" onclick="checkAnswer(1)">
+                <span>Proceed</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Level 2: Capitol Complex -->
+    <div class="container page" id="level2">
+        <div class="content-wrapper">
+            <div class="level-header">
+                <span class="level-number">Chapter Two</span>
+                <div class="progress">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+            
+            <div class="riddle-container">
+                <div class="riddle-ornament">❋</div>
+                <p class="riddle-text">
+                    Where democracy's structures reach for sky,<br>
+                    A master's vision catches the eye.<br>
+                    An open palm, rotating proud and free—<br>
+                    What does the monument decree?
+                </p>
+                <div class="riddle-ornament">❋</div>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="answer2" class="answer-input" placeholder="Speak the word">
+                <div class="input-line"></div>
+            </div>
+            <div class="error" id="error2"></div>
+            
+            <button class="btn-primary" onclick="checkAnswer(2)">
+                <span>Proceed</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Level 3: Elante Mall -->
+    <div class="container page" id="level3">
+        <div class="content-wrapper">
+            <div class="level-header">
+                <span class="level-number">Chapter Three</span>
+                <div class="progress">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+            
+            <div class="riddle-container">
+                <div class="riddle-ornament">❋</div>
+                <p class="riddle-text">
+                    In industrial sprawl, a temple of commerce gleams,<br>
+                    Where luxury flows in retail streams.<br>
+                    The largest of its kind, where shoppers roam—<br>
+                    What name adorns this marble home?
+                </p>
+                <div class="riddle-ornament">❋</div>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="answer3" class="answer-input" placeholder="Speak the word">
+                <div class="input-line"></div>
+            </div>
+            <div class="error" id="error3"></div>
+            
+            <button class="btn-primary" onclick="checkAnswer(3)">
+                <span>Proceed</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Level 4: Bird Park -->
+    <div class="container page" id="level4">
+        <div class="content-wrapper">
+            <div class="level-header">
+                <span class="level-number">Chapter Four</span>
+                <div class="progress">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot"></div>
+                </div>
+            </div>
+            
+            <div class="riddle-container">
+                <div class="riddle-ornament">❋</div>
+                <p class="riddle-text">
+                    Where feathered friends in aviaries sing,<br>
+                    In sector one, where nature is king.<br>
+                    Among the trees and chirping sound,<br>
+                    What sanctuary name is found?
+                </p>
+                <div class="riddle-ornament">❋</div>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="answer4" class="answer-input" placeholder="Speak the word">
+                <div class="input-line"></div>
+            </div>
+            <div class="error" id="error4"></div>
+            
+            <button class="btn-primary" onclick="checkAnswer(4)">
+                <span>Proceed</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Level 5: PEC -->
+    <div class="container page" id="level5">
+        <div class="content-wrapper">
+            <div class="level-header">
+                <span class="level-number">Chapter Five</span>
+                <div class="progress">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                </div>
+            </div>
+            
+            <div class="riddle-container">
+                <div class="riddle-ornament">❋</div>
+                <p class="riddle-text">
+                    Where engineers are forged with pride,<br>
+                    In sector twelve, knowledge as their guide.<br>
+                    The oldest temple of Punjab's technical dreams—<br>
+                    What do the golden letters gleam?
+                </p>
+                <div class="riddle-ornament">❋</div>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="answer5" class="answer-input" placeholder="Speak the word">
+                <div class="input-line"></div>
+            </div>
+            <div class="error" id="error5"></div>
+            
+            <button class="btn-primary" onclick="checkAnswer(5)">
+                <span>Proceed</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Final Page -->
+    <div class="container page" id="final">
+        <div class="content-wrapper">
+            <div class="final-ornament">✦</div>
+            <h2 class="page-title">The Hunt Concludes</h2>
+            <div class="ornamental-line"></div>
+            
+            <div class="final-content">
+                <p class="final-text">You have walked the city with silent purpose.</p>
+                <p class="final-text">You have solved what others overlooked.</p>
+                <p class="final-text">You have proven yourself worthy.</p>
+                
+                <div class="prize-section">
+                    <div class="prize-ornament">◆</div>
+                    <p class="prize-text">Claim Your Certificate</p>
+                    <div class="input-container" style="margin-top: 2rem;">
+                        <input type="text" id="userName" class="answer-input" placeholder="Enter your name">
+                        <div class="input-line"></div>
+                    </div>
+                    <button class="btn-primary" onclick="generateCertificate()" style="margin-top: 2rem;">
+                        <span>Generate Certificate</span>
+                    </button>
+                    <div class="prize-ornament">◆</div>
+                </div>
+            </div>
+            
+            <div class="final-ornament">✦</div>
+        </div>
+    </div>
+
+    <!-- Certificate Page -->
+    <div class="container page" id="certificate">
+        <div class="content-wrapper">
+            <div id="certificateContent" class="certificate-wrapper">
+                <div class="certificate-border">
+                    <div class="certificate-inner">
+                        <div class="certificate-ornament-top">✦</div>
+                        <h1 class="certificate-title">Certificate of Achievement</h1>
+                        <div class="ornamental-line" style="margin: 1.5rem auto;"></div>
+                        
+                        <p class="certificate-subtitle">This certifies that</p>
+                        <h2 class="certificate-name" id="certificateName"></h2>
+                        
+                        <p class="certificate-text">has successfully completed</p>
+                        <p class="certificate-hunt-title">The Silent Hunt</p>
+                        <p class="certificate-text">and has demonstrated exceptional knowledge of</p>
+                        <p class="certificate-city">Chandigarh</p>
+                        
+                        <p class="certificate-achievement">
+                            By solving five enigmatic riddles and discovering the hidden treasures<br>
+                            of the City Beautiful, this individual has proven their mastery<br>
+                            of Chandigarh's landmarks, history, and spirit.
+                        </p>
+                        
+                        <div class="certificate-date" id="certificateDate"></div>
+                        
+                        <div class="certificate-ornament-bottom">✦</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certificate-actions">
+                <p class="screenshot-text">Screenshot or download this certificate</p>
+                
+                <button class="btn-primary" onclick="downloadCertificate()">
+                    <span>Download Certificate</span>
+                </button>
+                
+                <button class="btn-secondary" onclick="showPage('final')" style="margin-top: 1rem;">
+                    <span>Back</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
